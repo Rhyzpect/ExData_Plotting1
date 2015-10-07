@@ -39,3 +39,20 @@ powconsumption$DateTime <- strptime(powconsumption$DateTime,"%Y-%m-%d %H:%M:%S")
 library(dplyr)
 
 powconsumption3 <- select(powconsumption,c(DateTime,Global_active_power:Sub_metering_3))
+
+# To plot for our required graph, use the following codes
+
+png(file="plot3.png",bg="transparent")
+
+plot(powconsumption3$DateTime,powconsumption3$Sub_metering_1,type="l",lwd=1.5,
+     ylab="Energy sub metering",xlab="",font.lab=2)
+
+lines(powconsumption3$DateTime,powconsumption3$Sub_metering_2,col="red",lwd=1.5)
+
+lines(powconsumption3$DateTime,powconsumption3$Sub_metering_3,col="blue",lwd=1.5)
+
+legend("topright",lty=c(1,1,1),lwd=c(2.5,2.5),col=c("black","red","blue"),
+       legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),cex=0.8)
+
+dev.off()
+
