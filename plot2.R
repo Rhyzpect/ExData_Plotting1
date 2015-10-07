@@ -48,3 +48,5 @@ plot(powconsumption3$DateTime,powconsumption3$Global_active_power,type="l",
      xlab="",ylab="Global Active Power (kilowatts)",font.lab=2,lwd=1.5)
 
 dev.off()
+
+message("Your Graph is Save in Your Working Directory")

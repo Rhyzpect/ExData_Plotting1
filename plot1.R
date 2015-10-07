@@ -50,3 +50,5 @@ hist(powconsumption3$Global_active_power,col="red",main="Global Active Power",
      xlab="Global Active Power (kilowatts)",border=1,font.lab=2)
 
 dev.off()
+
+message("Your Graph is Save in Your Working Directory")

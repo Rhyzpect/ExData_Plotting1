@@ -40,3 +40,41 @@ library(dplyr)
 
 powconsumption3 <- select(powconsumption,c(DateTime,Global_active_power:Sub_metering_3))
 
+# Use png() to save the graph in png format
+
+png(file="plot4.png",bg="transparent")
+
+# To create four graphs, use par() function with argument mfrow(). 
+
+par(mfrow=c(2,2))
+
+# First graph (topleft)
+
+plot(powconsumption3$DateTime,powconsumption3$Global_active_power,type="l",
+     xlab="",ylab="Global Active Power (kilowatts)",font.lab=2,lwd=1.5)
+
+# Second graph (topright)
+
+plot(powconsumption3$DateTime,powconsumption3$Voltage,type="l",
+     xlab="datetime",ylab="Voltage",font.lab=2,lwd=1.5)
+
+# Third graph (bottom left)
+
+plot(powconsumption3$DateTime,powconsumption3$Sub_metering_1,type="l",lwd=1.5,
+     ylab="Energy sub metering",xlab="",font.lab=2)
+
+lines(powconsumption3$DateTime,powconsumption3$Sub_metering_2,col="red",lwd=1.5)
+
+lines(powconsumption3$DateTime,powconsumption3$Sub_metering_3,col="blue",lwd=1.5)
+
+legend("topright",lty=c(1,1,1),lwd=c(2.5,2.5),col=c("black","red","blue"),
+       legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),bty="n",cex=0.8)
+
+# Fourth graph (bottom right)
+
+plot(powconsumption3$DateTime,powconsumption3$Global_reactive_power,type="l",
+     xlab="datetime",ylab="Global_reactive_power",font.lab=2,lwd=1.5)
+
+dev.off()
+
+message("Your Graph is Save in Your Working Directory")
