@@ -40,3 +40,11 @@ library(dplyr)
 
 powconsumption3 <- select(powconsumption,c(DateTime,Global_active_power:Sub_metering_3))
 
+# To plot our desired plot and save it to a png format, use the following code
+
+png(file="plot2.png",bg="transparent")
+
+plot(powconsumption3$DateTime,powconsumption3$Global_active_power,type="l",
+     xlab="",ylab="Global Active Power (kilowatts)")
+
+dev.off()
