@@ -51,7 +51,7 @@ par(mfrow=c(2,2))
 # First graph (topleft)
 
 plot(powconsumption3$DateTime,powconsumption3$Global_active_power,type="l",
-     xlab="",ylab="Global Active Power (kilowatts)",font.lab=2,lwd=1.5)
+     xlab="",ylab="Global Active Power",font.lab=2,lwd=1.5)
 
 # Second graph (topright)
 
