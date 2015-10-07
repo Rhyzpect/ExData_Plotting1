@@ -45,6 +45,6 @@ powconsumption3 <- select(powconsumption,c(DateTime,Global_active_power:Sub_mete
 png(file="plot2.png",bg="transparent")
 
 plot(powconsumption3$DateTime,powconsumption3$Global_active_power,type="l",
-     xlab="",ylab="Global Active Power (kilowatts)")
+     xlab="",ylab="Global Active Power (kilowatts)",font.lab=2,lwd=1.5)
 
 dev.off()

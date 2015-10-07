@@ -47,6 +47,6 @@ png(file="plot1.png",bg="transparent")
 # required label. 
 
 hist(powconsumption3$Global_active_power,col="red",main="Global Active Power",
-     xlab="Global Active Power (kilowatts)")
+     xlab="Global Active Power (kilowatts)",border=1,font.lab=2)
 
 dev.off()
